@@ -10,16 +10,16 @@ namespace NudeMVC.Models
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using var context = new NudeMVCContext(
+            using var db = new NudeMVCContext(
                 serviceProvider.GetRequiredService<DbContextOptions<NudeMVCContext>>());
 
-            if (context.Item.Any())
+            if (db.Item.Any())
             {
-                context.Item.RemoveRange(context.Item.ToList());
-                context.SaveChanges();
+                db.Item.RemoveRange(db.Item.ToList());
+                db.SaveChanges();
             }
 
-            context.Item.AddRange(
+            db.Item.AddRange(
                 new Item
                 {
                     Name = "TV",
@@ -75,7 +75,7 @@ namespace NudeMVC.Models
                     Value = 1000
                 }
             );
-            context.SaveChanges();
+            db.SaveChanges();
         }
     }
 }
