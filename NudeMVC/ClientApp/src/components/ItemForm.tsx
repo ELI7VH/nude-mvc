@@ -15,8 +15,8 @@ export const ItemForm = ({ category }: Props) => {
       return;
     }
     await api.createItem({ name, value, category });
-
-    message.success(`created item => ${name}: ${value}`);
+    // TODO: socket brouhaha
+    window.location.reload();
   };
 
   return (
