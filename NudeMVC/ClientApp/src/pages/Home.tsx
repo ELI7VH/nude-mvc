@@ -17,8 +17,8 @@ export const Home = () => {
 
   return (
     <Layout>
-      <Layout.Header>
-        <h1 style={{ color: '#fff' }}>Asset Listing App</h1>
+      <Layout.Header className="header">
+        <h1>Asset Listing App</h1>
       </Layout.Header>
 
       {[Category.Electronics, Category.Clothing, Category.Kitchen].map(
@@ -31,8 +31,8 @@ export const Home = () => {
         )
       )}
 
-      <Layout.Footer style={{ backgroundColor: '#389e0d' }}>
-        <h2 style={{ color: '#fff' }}>Total: ${sumBy(items.data, 'value')}</h2>
+      <Layout.Footer className="footer">
+        <h2>Total: ${sumBy(items.data, 'value')}</h2>
       </Layout.Footer>
     </Layout>
   );

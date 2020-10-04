@@ -12,3 +12,18 @@
   margin: 1rem auto;
   width: 60vw;
 }
+
+.footer {
+  background-color: #389e0d;
+}
+
+.header h1 {
+  font-weight: 800;
+  color: #fff;
+}
+
+.footer h2 {
+  text-align: right;
+  font-weight: 600;
+  color: #fff;
+}

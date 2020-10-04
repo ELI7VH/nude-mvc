@@ -29,7 +29,7 @@ namespace NudeMVC.Controllers
 
         // POST api/<ItemsController>
         [HttpPost]
-        public async Task<ActionResult> Post(decimal value, string name, Category category)
+        public async Task<ActionResult> Post([FromBody]decimal value, [FromBody] string name, [FromBody] Category category)
         {
             // parse body
             await db.Item.AddAsync(new Item { Name=name,  Value = value, Category = category } );
