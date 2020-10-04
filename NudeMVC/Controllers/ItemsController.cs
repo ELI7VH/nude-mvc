@@ -27,12 +27,24 @@ namespace NudeMVC.Controllers
             return await db.Item.ToListAsync();
         }
 
+        public class ItemCreateVM
+        {
+            public string Name { get; set; }
+            public decimal Value { get; set; }
+            public Category Category { get; set; }
+        }
+
         // POST api/<ItemsController>
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody]decimal value, [FromBody] string name, [FromBody] Category category)
+        public async Task<ActionResult> Post(ItemCreateVM item)
         {
             // parse body
-            await db.Item.AddAsync(new Item { Name=name,  Value = value, Category = category } );
+            await db.Item.AddAsync(new Item { 
+                Name=item.Name,  
+                Value = item.Value, 
+                Category = item.Category 
+            });
+
             await db.SaveChangesAsync();
             // TODO: socket
             return Ok();
