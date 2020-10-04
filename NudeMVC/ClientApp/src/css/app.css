@@ -1,0 +1,14 @@
+.item-row {
+  transition: all 0.3s ease-out;
+  padding: 0.5rem;
+  border-radius: 1px;
+}
+
+.item-row:hover {
+  background: linear-gradient(to right, #ddd, #fff);
+}
+
+.category-widget {
+  margin: 1rem auto;
+  width: 60vw;
+}
