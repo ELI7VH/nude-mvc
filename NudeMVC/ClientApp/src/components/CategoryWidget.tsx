@@ -12,7 +12,6 @@ type Props = {
 
 export const CategoryWidget = ({ category, items }: Props) => {
   const [newItem, setNewItem] = useState(false);
-  // TOOD: get by type for refetching on new / delete
 
   return (
     <>

@@ -15,7 +15,7 @@ export const ItemForm = ({ category }: Props) => {
       return;
     }
     await api.createItem({ name, value, category });
-    // TODO: socket brouhaha
+    // NOTE: prefer async architecture instead of forcing client reload or syncronous db mutations
     window.location.reload();
   };
 

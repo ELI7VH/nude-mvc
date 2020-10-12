@@ -11,7 +11,7 @@ type Props = {
 export const ItemDetails = ({ item }: Props) => {
   const handleDelete = async () => {
     await api.deleteItem(item.id);
-    // TODO: sockets, etc.
+    // NOTE: prefer async architecture instead of forcing client reload or syncronous db mutations
     window.location.reload();
   };
 
